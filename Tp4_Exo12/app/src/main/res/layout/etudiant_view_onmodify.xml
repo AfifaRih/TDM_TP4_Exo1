@@ -1,7 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="esi.tp4_exo1.AddEtudiant"
+    xmlns:app="http://schemas.android.com/apk/res/esi.tp4_exo1" android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -89,11 +90,15 @@
             android:id="@+id/editTxt_date"/>
     </LinearLayout>
 
-    <Button
-        android:layout_width="200dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Valider"
-        android:id="@+id/btn_creer"
-        android:layout_gravity="center_horizontal"/>
-
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Valider"
+            android:id="@+id/validate"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
 </LinearLayout>

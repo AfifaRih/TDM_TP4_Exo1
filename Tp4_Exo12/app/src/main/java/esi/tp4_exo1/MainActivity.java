@@ -24,10 +24,12 @@ import android.widget.Toast;
 public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
+    EtudiantsController controller;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //controller = new ?;
     }
 
     @Override
@@ -36,15 +38,17 @@ public class MainActivity extends ActionBarActivity
         Fragment f = new Fragment();
         Log.i("MainActivity", "onNavigationDrawerItemSelected " + position);
         switch(position){
-            case 0: f = new ListeEtudiant(); break;
-            case 1: f = new AddEtudiant(); break;
-            case 2: f = new FindEtudiant(); break;
+            case 0: f = new ListeEtudiant(controller); break;
+            case 1: f = new AddEtudiant(controller); break;
+            case 2: f = new FindEtudiant(controller); break;
 
         }
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.container, f)
                 .commit();
+
+        ((DrawerLayout)findViewById(R.id.drawer_layout)).closeDrawers();
     }
 
 

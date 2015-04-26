@@ -17,10 +17,12 @@ import android.widget.ListView;
  */
 public class ListeEtudiant extends Fragment {
 
-    public ListeEtudiant() {
-        Log.i("ListeEtudiant", "ListeEtudiant ");
-    }
+    EtudiantsController conroller;
 
+    public ListeEtudiant(EtudiantsController conroller) {
+
+        this.conroller = conroller;
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
